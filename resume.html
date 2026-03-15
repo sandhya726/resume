@@ -1,119 +1,45 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
-<title>Resume Builder</title>
-
-<style>
-
-body{
-font-family: Arial;
-background:#f4f4f4;
-text-align:center;
-}
-
-.container{
-display:flex;
-justify-content:center;
-gap:40px;
-padding:20px;
-}
-
-.form{
-width:40%;
-}
-
-.resume{
-width:40%;
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0px 0px 10px gray;
-}
-
-input,textarea{
-width:100%;
-margin:10px 0;
-padding:8px;
-}
-
-button{
-padding:10px;
-background:#007bff;
-color:white;
-border:none;
-cursor:pointer;
-}
-
-</style>
+<title>Your Resume</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Resume Builder</h1>
+<div class="resume-box">
 
-<div class="container">
+<h1 id="name"></h1>
+<p id="email"></p>
+<p id="phone"></p>
 
-<div class="form">
+<h2>Skills</h2>
+<p id="skills"></p>
 
-<h2>Enter Details</h2>
+<h2>Education</h2>
+<p id="education"></p>
 
-<input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
-<input id="phone" placeholder="Phone">
-<input id="skills" placeholder="Skills">
+<h2>Projects</h2>
+<p id="projects"></p>
 
-<textarea id="education" placeholder="Education"></textarea>
-<textarea id="projects" placeholder="Projects"></textarea>
-
-<button onclick="generateResume()">Generate Resume</button>
-
-</div>
-
-
-<div class="resume">
-
-<h2 id="rname"></h2>
-<p id="remail"></p>
-<p id="rphone"></p>
-
-<h3>Skills</h3>
-<p id="rskills"></p>
-
-<h3>Education</h3>
-<p id="reducation"></p>
-
-<h3>Projects</h3>
-<p id="rprojects"></p>
-
-</div>
+<button onclick="window.print()">Download / Print Resume</button>
 
 </div>
 
 <script>
 
-function generateResume(){
+const params = new URLSearchParams(window.location.search);
 
-document.getElementById("rname").innerText =
-document.getElementById("name").value;
-
-document.getElementById("remail").innerText =
-document.getElementById("email").value;
-
-document.getElementById("rphone").innerText =
-document.getElementById("phone").value;
-
-document.getElementById("rskills").innerText =
-document.getElementById("skills").value;
-
-document.getElementById("reducation").innerText =
-document.getElementById("education").value;
-
-document.getElementById("rprojects").innerText =
-document.getElementById("projects").value;
-
-}
+document.getElementById("name").innerText = params.get("name");
+document.getElementById("email").innerText = params.get("email");
+document.getElementById("phone").innerText = params.get("phone");
+document.getElementById("skills").innerText = params.get("skills");
+document.getElementById("education").innerText = params.get("education");
+document.getElementById("projects").innerText = params.get("projects");
 
 </script>
 
 </body>
 </html>
+```

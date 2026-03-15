@@ -1,119 +1,37 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
 <title>Resume Builder</title>
-
-<style>
-
-body{
-font-family: Arial;
-background:#f4f4f4;
-text-align:center;
-}
-
-.container{
-display:flex;
-justify-content:center;
-gap:40px;
-padding:20px;
-}
-
-.form{
-width:40%;
-}
-
-.resume{
-width:40%;
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0px 0px 10px gray;
-}
-
-input,textarea{
-width:100%;
-margin:10px 0;
-padding:8px;
-}
-
-button{
-padding:10px;
-background:#007bff;
-color:white;
-border:none;
-cursor:pointer;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Resume Builder</h1>
-
 <div class="container">
 
-<div class="form">
+<h1>Resume Builder</h1>
 
-<h2>Enter Details</h2>
+<form action="resume.html">
 
-<input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
-<input id="phone" placeholder="Phone">
-<input id="skills" placeholder="Skills">
+<input type="text" name="name" placeholder="Full Name" required>
 
-<textarea id="education" placeholder="Education"></textarea>
-<textarea id="projects" placeholder="Projects"></textarea>
+<input type="email" name="email" placeholder="Email">
 
-<button onclick="generateResume()">Generate Resume</button>
+<input type="text" name="phone" placeholder="Phone Number">
 
-</div>
+<textarea name="skills" placeholder="Skills"></textarea>
 
+<textarea name="education" placeholder="Education"></textarea>
 
-<div class="resume">
+<textarea name="projects" placeholder="Projects"></textarea>
 
-<h2 id="rname"></h2>
-<p id="remail"></p>
-<p id="rphone"></p>
+<button type="submit">Generate Resume</button>
 
-<h3>Skills</h3>
-<p id="rskills"></p>
-
-<h3>Education</h3>
-<p id="reducation"></p>
-
-<h3>Projects</h3>
-<p id="rprojects"></p>
+</form>
 
 </div>
-
-</div>
-
-<script>
-
-function generateResume(){
-
-document.getElementById("rname").innerText =
-document.getElementById("name").value;
-
-document.getElementById("remail").innerText =
-document.getElementById("email").value;
-
-document.getElementById("rphone").innerText =
-document.getElementById("phone").value;
-
-document.getElementById("rskills").innerText =
-document.getElementById("skills").value;
-
-document.getElementById("reducation").innerText =
-document.getElementById("education").value;
-
-document.getElementById("rprojects").innerText =
-document.getElementById("projects").value;
-
-}
-
-</script>
 
 </body>
 </html>
+```
